@@ -199,3 +199,23 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+cyana-language subcomponent
+
+cyana-json includes a number of subcomponents with separate copyright notices
+and license terms. Your use of these subcomponents is subject to the terms and
+conditions of the following licenses.
+
+--------------------------------------------------
+generate Abstract Syntax Tree by cyana-ast-runtime
+
+* cyana-ast
+*
+* Copyright (C) 2022, tian wei jun
+
+* licensed under the apache license v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* for details see: https://github.com/tianweijun/cyana-ast.git
+---------------------------------------------------

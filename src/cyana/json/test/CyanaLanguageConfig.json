@@ -1,0 +1,24 @@
+{
+  "isa": "intel",
+  "platform": {
+    "os": "win10",
+    "assembleInstructionSets": [
+      "IA-32",
+      "Intel-64",
+      "MMX",
+      "SSE",
+      "SSE2",
+      "SSE3",
+      "SSE4.1",
+      "SSE4.2",
+      "EM64T",
+      "VT-x",
+      "AES",
+      "AVX",
+      "AVX2",
+      "FMA3"
+    ]
+  },
+  "userArguments": {
+  }
+}
