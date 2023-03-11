@@ -1,5 +1,10 @@
 package cyana.json.reflector.impl;
 
+import cyana.json.reflector.ClassReflector;
+import cyana.json.reflector.ConstructorReflector;
+import cyana.json.reflector.FieldReflector;
+import cyana.json.reflector.MethodReflector;
+import cyana.json.reflector.util.ReflectException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -9,16 +14,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
-import cyana.json.reflector.ClassReflector;
-import cyana.json.reflector.ConstructorReflector;
-import cyana.json.reflector.FieldReflector;
-import cyana.json.reflector.MethodReflector;
-import cyana.json.reflector.util.ReflectException;
 
 /**
  * Class反射器的默认实现。
  *
- * @author: twj
+ * @author: wjf
+ * @date: 2022/4/21
  */
 public class ClassReflectorImpl<T> implements ClassReflector<T> {
 
@@ -172,7 +173,7 @@ public class ClassReflectorImpl<T> implements ClassReflector<T> {
     }
 
     Class<?> superClass = this.klass;
-    this.klass.getFields();
+
     while (superClass != Object.class) {
       superClass = superClass.getSuperclass();
       for (Field superField : superClass.getDeclaredFields()) {

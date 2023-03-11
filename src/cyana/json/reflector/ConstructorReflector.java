@@ -1,17 +1,16 @@
 package cyana.json.reflector;
 
-import cyana.json.reflector.util.TypeParameterResolver.GenericArrayTypeImpl;
-import cyana.json.reflector.util.TypeParameterResolver.ParameterizedTypeImpl;
-import cyana.json.reflector.util.TypeParameterResolver.WildcardTypeImpl;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Type;
 import java.util.List;
+import cyana.json.reflector.util.TypeParameterResolver;
 
 /**
  * Constructor反射器，Constructor反射相关操作的核心接口。
  *
  * @param <T> Java类。
- * @author: twj
+ * @author: wjf
+ * @date: 2022/4/21
  */
 public interface ConstructorReflector<T> extends Reflector {
 
@@ -63,9 +62,10 @@ public interface ConstructorReflector<T> extends Reflector {
 
   /**
    * 获取构造器参数的泛型。 如果是参数化类型{@link java.lang.reflect.ParameterizedType}，则返回实际的类型为{@link
-   * ParameterizedTypeImpl} 如果是通配符类型{@link java.lang.reflect.WildcardType}，则返回实际的类型为{@link
-   * WildcardTypeImpl} 如果是泛型数组类型{@link java.lang.reflect.GenericArrayType}，则返回实际的类型为{@link
-   * GenericArrayTypeImpl}
+   * TypeParameterResolver.ParameterizedTypeImpl} 如果是通配符类型{@link
+   * java.lang.reflect.WildcardType}，则返回实际的类型为{@link TypeParameterResolver.WildcardTypeImpl}
+   * 如果是泛型数组类型{@link java.lang.reflect.GenericArrayType}，则返回实际的类型为{@link
+   * TypeParameterResolver.GenericArrayTypeImpl}
    *
    * @return 构造器参数的泛型。
    */

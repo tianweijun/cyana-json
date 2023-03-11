@@ -1,17 +1,18 @@
 package cyana.json.reflector.impl;
 
+import cyana.json.reflector.FieldReflector;
+import cyana.json.reflector.util.ReflectException;
+import cyana.json.reflector.util.TypeParameterResolver;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
-import cyana.json.reflector.FieldReflector;
-import cyana.json.reflector.util.ReflectException;
-import cyana.json.reflector.util.TypeParameterResolver;
 
 /**
  * Field反射器的默认实现。
  *
- * @author: twj
+ * @author: wjf
+ * @date: 2022/4/21
  */
 public class FieldReflectorImpl<F> implements FieldReflector<F> {
 

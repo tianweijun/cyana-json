@@ -6,7 +6,8 @@ import java.util.List;
  * Class反射器，Class反射相关操作的核心接口。
  *
  * @param <T> Java类。
- * @author: twj
+ * @author: wjf
+ * @date: 2022/4/21
  */
 public interface ClassReflector<T> extends Reflector {
 

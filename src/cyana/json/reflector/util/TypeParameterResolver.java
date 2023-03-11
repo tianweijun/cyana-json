@@ -16,7 +16,8 @@ import java.util.List;
 /**
  * 类型参数解析器。
  *
- * @author: twj
+ * @author: wjf
+ * @date: 2022/4/21
  */
 @SuppressWarnings("all")
 public class TypeParameterResolver {

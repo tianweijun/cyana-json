@@ -1,16 +1,15 @@
 package cyana.json.visitor;
 
-/**
- * 类型包含1数组元素 2类成员 3数组 4其他. ContextAstValue.
- *
- * @author tian wei jun
- */
 import cyana.json.reflector.ClassReflector;
 import cyana.json.reflector.FieldReflector;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 
-/** Object[] refValue = new Object[1]; public int indexOfArray = -1; String field = null; */
+/**
+ * 类型包含1数组元素 2类成员 3数组 4其他. ContextAstValue.
+ *
+ * @author tian wei jun
+ */
 public abstract class ContextAstValue {
   public Type type = Type.REF;
   public JsonClassReflector classOfValue = null;
