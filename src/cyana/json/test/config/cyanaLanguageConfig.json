@@ -1,0 +1,33 @@
+{
+  "userCofig": {
+    "projectPath": "D:\\github-pro\\cyana-language\\test\\helloworld",
+    "assembleInstructionSets": [
+      "x86"
+    ],
+    "os": "win10",
+    "defaultOperandSize": 4,
+    "defaultAddressSize": 4
+  },
+  "envConfig": {
+    "isa": "intel",
+    "os": "win10",
+    "defaultOperandSize": 4,
+    "defaultAddressSize": 4,
+    "assembleInstructionSets": [
+      "IA-32",
+      "Intel-64",
+      "MMX",
+      "SSE",
+      "SSE2",
+      "SSE3",
+      "SSE4.1",
+      "SSE4.2",
+      "EM64T",
+      "VT-x",
+      "AES",
+      "AVX",
+      "AVX2",
+      "FMA3"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: cyana.json.test.JsonApplicationTest
+Main-Class: cyana.json.test.school.JsonApplicationTest
 Class-Path: cyana-ast-runtime.jar
 

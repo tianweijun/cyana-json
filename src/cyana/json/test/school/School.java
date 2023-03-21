@@ -1,4 +1,4 @@
-package cyana.json.test;
+package cyana.json.test.school;
 
 /**
  * School.

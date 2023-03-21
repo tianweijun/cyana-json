@@ -109,7 +109,7 @@ public class JsonVisitor implements AstVisitor {
         // 传引用
         if (componentType.isArray()) { // 转引用为arr
           ArrayContextAstValue eleArrayContextAstValue = new ArrayContextAstValue();
-          eleArrayContextAstValue.set((Object[]) vOfEleArr);
+          eleArrayContextAstValue.set(vOfEleArr);
           valueEleArrAst.contextAstValue = eleArrayContextAstValue;
         } else if (eleArrClassReflector.isPrimitive() || eleArrClassReflector.isFinal()) {
           // 传引用arr[index](int,String,Double,...)
@@ -166,7 +166,6 @@ public class JsonVisitor implements AstVisitor {
     // 传引用
     if (fieldJsonClassReflector.isArray()) { // 转引用arr
       ArrayContextAstValue arrayContextAstValue = new ArrayContextAstValue();
-      arrayContextAstValue.classOfValue = fieldOfObjectContextAstValue.classOfValue;
       arrayContextAstValue.set(pairValue);
       pairValueAst.contextAstValue = arrayContextAstValue;
     } else if (fieldJsonClassReflector.isPrimitive() || fieldJsonClassReflector.isFinal()) {
@@ -177,6 +176,7 @@ public class JsonVisitor implements AstVisitor {
       refContextAstValue.setValue(pairValue);
       pairValueAst.contextAstValue = refContextAstValue;
     }
+    pairValueAst.contextAstValue.classOfValue = fieldJsonClassReflector;
     // 递归遍历语法树
     visitValue(pairValueAst);
   }

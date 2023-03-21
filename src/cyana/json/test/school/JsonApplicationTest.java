@@ -1,4 +1,4 @@
-package cyana.json.test;
+package cyana.json.test.school;
 
 import cyana.json.Json;
 import java.io.IOException;
@@ -12,14 +12,13 @@ import java.io.InputStream;
 public class JsonApplicationTest {
 
   public static void main(String[] args) {
-
     // int.class
     int number = Json.fromJson("32", int.class);
 
     InputStream jsonInputStream =
         JsonApplicationTest.class
             .getClassLoader()
-            .getResourceAsStream("cyana/json/test/school.json");
+            .getResourceAsStream("cyana/json/test/school/school.json");
 
     School school = Json.fromJson(jsonInputStream, School.class);
 
