@@ -34,10 +34,6 @@ value
 @nonterminalGrammar end ;
 
 @terminalGrammar begin ;
- WS
-    : [\s\t\n\r]+ -> skip
-    ;
-
 LeftBrace : '{' ;
 RightBrace : '}' ;
 Comma : ',' ;
@@ -56,6 +52,10 @@ NUMBER
 STRING
    : '"' (ESC | STRING_OTHER_CHAR)* '"'
    ;
+
+ WS
+    : [\s\t\n\r]+ -> skip
+    ;
 @terminalGrammar end ;
 
 @terminalFragmentGrammar begin ;

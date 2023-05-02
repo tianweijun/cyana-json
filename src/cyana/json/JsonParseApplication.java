@@ -15,8 +15,7 @@ import java.io.InputStream;
  */
 public class JsonParseApplication {
 
-  private static RuntimeAutomataAstApplication runtimeAstApplication =
-      createRuntimeAutomataAstApplication();
+  private static RuntimeAutomataAstApplication runtimeAstApplication = null;
 
   /**
    * 序列化数据转为json实体.
@@ -25,6 +24,7 @@ public class JsonParseApplication {
    * @return entity
    */
   public static <T> T fromJson(InputStream jsonByteInputStream, Class<T> classOfT) {
+    construct();
     Ast ast = runtimeAstApplication.buildAst(jsonByteInputStream);
     if (null != jsonByteInputStream) {
       try {
@@ -38,18 +38,24 @@ public class JsonParseApplication {
     return Primitives.wrap(classOfT).cast(object);
   }
 
-  private static RuntimeAutomataAstApplication createRuntimeAutomataAstApplication() {
-    InputStream jsonAutomataInputStream =
-        JsonParseApplication.class.getClassLoader().getResourceAsStream("resources/automata.data");
-    RuntimeAutomataAstApplication runtimeAstApplication = new RuntimeAutomataAstApplication();
-    runtimeAstApplication.setContext(jsonAutomataInputStream);
-    if (null != jsonAutomataInputStream) {
-      try {
-        jsonAutomataInputStream.close();
-      } catch (IOException e) {
-        throw new CyanaJsonParseRuntimeException(e);
+  private static void construct() {
+    if (null == runtimeAstApplication) {
+      InputStream jsonAutomataInputStream =
+          JsonParseApplication.class.getClassLoader()
+              .getResourceAsStream("resources/automata.data");
+      runtimeAstApplication = new RuntimeAutomataAstApplication();
+      runtimeAstApplication.setContext(jsonAutomataInputStream);
+      if (null != jsonAutomataInputStream) {
+        try {
+          jsonAutomataInputStream.close();
+        } catch (IOException e) {
+          throw new CyanaJsonParseRuntimeException(e);
+        }
       }
     }
-    return runtimeAstApplication;
+  }
+
+  public static void destruct() {
+    runtimeAstApplication = null;//helper gc
   }
 }

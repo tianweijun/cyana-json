@@ -31,4 +31,8 @@ public class Json {
   public static String toJson(Object src) {
     return "";
   }
+
+  public static void destruct(){
+    JsonParseApplication.destruct();
+  }
 }
